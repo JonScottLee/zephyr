@@ -7,10 +7,12 @@ export enum ButtonVariants {
 
 type ButtonProps = {
   additionalClasses?: string;
+  disabled?: boolean;
   variant?: ButtonVariants;
 };
 
-const rootClasses = 'py-3 px-4 font-medium tracking-tight uppercase text-sm transition ease-in-out';
+const rootClasses =
+  'py-3 px-4 font-medium tracking-tight uppercase text-sm transition ease-in-out disabled:opacity-50 disabled:pointer-events-none';
 
 const variantClasses = {
   [ButtonVariants.PRIMARY]: 'bg-primary-900 text-white hover:bg-primary-800',
@@ -21,7 +23,12 @@ const variantClasses = {
 export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   additionalClasses = '',
   children,
+  disabled = false,
   variant = ButtonVariants.PRIMARY,
 }) => {
-  return <button className={`${rootClasses} ${variantClasses[variant]} ${additionalClasses}`}>{children}</button>;
+  return (
+    <button disabled={disabled} className={`${rootClasses} ${variantClasses[variant]} ${additionalClasses}`}>
+      {children}
+    </button>
+  );
 };

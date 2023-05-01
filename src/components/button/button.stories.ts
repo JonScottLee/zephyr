@@ -26,3 +26,11 @@ export const Secondary: Story = {
     variant: ButtonVariants.SECONDARY,
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    children: 'Disabled Button',
+    variant: ButtonVariants.PRIMARY,
+    disabled: true,
+  },
+};
