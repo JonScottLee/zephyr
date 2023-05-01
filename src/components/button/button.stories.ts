@@ -27,6 +27,13 @@ export const Secondary: Story = {
   },
 };
 
+export const Tertiary: Story = {
+  args: {
+    children: 'Tertiary Button',
+    variant: ButtonVariants.TERTIARY,
+  },
+};
+
 export const Disabled: Story = {
   args: {
     children: 'Disabled Button',

@@ -18,6 +18,8 @@ module.exports = {
         'primary-700': 'var(--global--color--brand-primary-700)',
         'primary-800': 'var(--global--color--brand-primary-800)',
         'primary-900': 'var(--global--color--brand-primary-900)',
+
+        'bg-primary-button': 'var(--button--primary--BackgroundColor)',
       },
     },
   },

@@ -3,6 +3,7 @@ import { FC } from 'react';
 export enum ButtonVariants {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
+  TERTIARY = 'tertiary',
 }
 
 type ButtonProps = {
@@ -15,9 +16,9 @@ const rootClasses =
   'py-3 px-4 font-medium tracking-tight uppercase text-sm transition ease-in-out disabled:opacity-50 disabled:pointer-events-none';
 
 const variantClasses = {
-  [ButtonVariants.PRIMARY]: 'bg-primary-900 text-white hover:bg-primary-800',
-  [ButtonVariants.SECONDARY]:
-    'border-primary text-primary border-2 bg-transparent hover:border-transparent hover:bg-primary hover:text-white ',
+  [ButtonVariants.PRIMARY]: 'button--primary',
+  [ButtonVariants.SECONDARY]: 'button--secondary ',
+  [ButtonVariants.TERTIARY]: 'button--tertiary',
 };
 
 export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({

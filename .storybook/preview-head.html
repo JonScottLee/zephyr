@@ -1,6 +1,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <style>
   :root {
+    --global--color--lightest: #fff;
+    --global--color--darkest: #000;
+
     --global--color--brand-primary: #538c5d;
     --global--color--brand-primary-100: #e5f5e2;
     --global--color--brand-primary-200: #c8e8c9;
@@ -11,7 +14,20 @@
     --global--color--brand-primary-700: #43a047;
     --global--color--brand-primary-800: #388e3c;
     --global--color--brand-primary-900: #2e7d32;
-        
+
+    --button--primary--BackgroundColor: var(--global--color--brand-primary-900);
+    --button--primary--Color: var(--global--color--lightest, #fff);
+    --button--primary--hover--Color: var(--global--color--lightest, #fff);
+    --button-primary--hover--BackgroundColor: var(--global--color--brand-primary-800);
+
+    --button--secondary--BackgroundColor: transparent;
+    --button--secondary--Color: var(--global--color--brand-primary);
+    --button--secondary--hover--BackgroundColor: var(--global--color--brand-primary);
+    --button--secondary--hover--Color: var(--global--color--lightest, #fff);
+
+    --button--teritary--Color: var(--global--color--darkest, #000);
+    --button--tertiary--hover--BackgkroundColor: var(--global--color--brand-primary-200);
+    --button--tertiary--hover--Color: var(--global--color--darkest, #000);
   }
 
   body {
