@@ -1,5 +1,5 @@
 import { Canvas, Meta, Story } from '@storybook/blocks';
-import { Button, ButtonVariants } from './button';
+import { Button, ButtonVariants, ButtonSizes } from './button';
 import * as ButtonStories from './button.stories';
 
 <Meta of={ButtonStories} />
@@ -14,6 +14,11 @@ import * as ButtonStories from './button.stories';
 </Canvas>
 
 ## Sizes
+<Canvas>
+  <Button size={ButtonSizes.LARGE}>Large</Button>
+  <Button size={ButtonSizes.MEDIUM}>Medium</Button>
+  <Button size={ButtonSizes.SMALL}>Small</Button>
+</Canvas>
 
 ## Disabled
 <Canvas>
@@ -23,5 +28,6 @@ import * as ButtonStories from './button.stories';
 </Canvas>
 
 ## States
+{/* Make active state scale down to .9 or so, like Monday -- it feels nice */}
 
 ## Icons

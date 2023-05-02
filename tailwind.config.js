@@ -2,6 +2,18 @@
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
+    fontSize: {
+      xs: '0.5rem',
+      sm: '0.625rem',
+      md: '0.8rem',
+      base: '1rem',
+      lg: '1.25rem',
+      xl: '1.25rem',
+      '2xl': '1.56rem',
+      '3xl': '1.94rem',
+      '4xl': '2.44rem',
+      '5xl': '3.05rem',
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

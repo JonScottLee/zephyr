@@ -1,0 +1,62 @@
+h1 {
+	font-size: 2.44rem;
+	line-height: 1.33rem;
+	padding-top: 0.333rem;
+	margin-bottom: 0.333rem;
+}
+
+h2 {
+	font-size: 1.94rem;
+	line-height: 1.68rem;
+	padding-top: 0.484rem;
+	margin-bottom: 0.355rem;
+}
+
+h3 {
+	font-size: 1.56rem;
+	line-height: 1.04rem;
+	padding-top: 0.200rem;
+	margin-bottom: 0.840rem;
+}
+
+h4 {
+	font-size: 1.25rem;
+	line-height: 1.30rem;
+	padding-top: 0.300rem;
+	margin-bottom: 1.00rem;
+}
+
+p {
+	font-size: 1.00rem;
+	line-height: 1.63rem;
+	padding-top: 0.500rem;
+	margin-bottom: 1.13rem;
+}
+
+p.xsmall  {
+	font-size: 0.625rem;
+	line-height: 1.02rem;
+	padding-top: 0.313rem;
+	margin-bottom: 0.565rem;
+}
+
+.small {
+	font-size: 0.80rem;
+	line-height: 1.30rem;
+	padding-top: 0.250rem;
+	margin-bottom: 0.704rem;
+}
+
+.medium {
+	font-size: 1.00rem;
+	line-height: 1.63rem;
+	padding-top: 0.500rem;
+	margin-bottom: 1.13rem;
+}
+
+.large {
+	font-size: 1.25rem;
+	line-height: 2.03rem;
+	padding-top: 1.000rem;
+	margin-bottom: 2.26rem;
+}
