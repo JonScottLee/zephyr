@@ -1,0 +1,28 @@
+@tailwind base;
+
+@layer base {
+  .button--primary {
+    @apply bg-primary-700;
+    @apply text-white;
+    @apply hover:bg-primary-800;
+  }
+
+  .button--secondary {
+    background: transparent;
+    @apply border-2;
+    @apply border-primary-900;
+    @apply hover:bg-primary-900;
+    @apply hover:text-white;
+  }
+
+  .button--tertiary {
+    @apply text-black;
+    @apply hover:bg-primary-200;
+  }
+
+  .button--active,
+  .button:active {
+    @apply scale-90;
+    @apply bg-primary-900;
+  }
+}
