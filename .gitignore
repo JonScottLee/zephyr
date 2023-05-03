@@ -173,7 +173,6 @@
 173
 174
 # VSCode
-.vscode/*
 !.vscode/tasks.json
 *.code-workspace
 # Local History for Visual Studio Code
