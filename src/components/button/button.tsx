@@ -7,7 +7,7 @@ type ButtonProps = {
   additionalClasses?: string;
   disabled?: boolean;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  size: ButtonSizes;
+  size?: ButtonSizes;
   variant?: ButtonVariants;
 };
 
