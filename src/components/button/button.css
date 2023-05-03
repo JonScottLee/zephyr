@@ -1,6 +1,15 @@
 @tailwind base;
 
 @layer base {
+  .button {
+    @apply rounded;
+  }
+
+  .button--active,
+  .button:active {
+    @apply scale-90;
+  }
+
   .button--primary {
     @apply bg-primary-700;
     @apply text-white;
@@ -20,9 +29,4 @@
     @apply hover:bg-primary-200;
   }
 
-  .button--active,
-  .button:active {
-    @apply scale-90;
-    @apply bg-primary-800;
-  }
 }

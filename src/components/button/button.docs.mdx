@@ -1,4 +1,4 @@
-import { Canvas, Meta, Story } from '@storybook/blocks';
+import { ArgsTable, Story, Canvas, Meta } from "@storybook/addon-docs";
 import { Button, ButtonVariants, ButtonSizes } from './button';
 import * as ButtonStories from './button.stories';
 
@@ -6,31 +6,33 @@ import * as ButtonStories from './button.stories';
 
 # Button
 
+## Props
+<ArgsTable of={Button} />
+
 ## Button Variants
+### Kinds
 <Canvas>
  <Button>Primary</Button>
  <Button variant={ButtonVariants.SECONDARY}>Secondary</Button>
  <Button variant={ButtonVariants.TERTIARY}>Tertiary</Button>
 </Canvas>
 
-## Sizes
+### Sizes
 <Canvas>
   <Button size={ButtonSizes.LARGE}>Large</Button>
   <Button size={ButtonSizes.MEDIUM}>Medium</Button>
   <Button size={ButtonSizes.SMALL}>Small</Button>
 </Canvas>
 
-## Disabled
+### Disabled
 <Canvas>
  <Button disabled>Primary</Button>
  <Button disabled variant={ButtonVariants.SECONDARY}>Secondary</Button>
  <Button disabled variant={ButtonVariants.TERTIARY}>Tertiary</Button>
 </Canvas>
 
-## States
+### States
 <Canvas>
  <Button>Regular</Button>
  <Button active>Active</Button>
 </Canvas>
-
-## Icons
