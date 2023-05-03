@@ -23,6 +23,6 @@
   .button--active,
   .button:active {
     @apply scale-90;
-    @apply bg-primary-900;
+    @apply bg-primary-800;
   }
 }
