@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Button, ButtonVariants } from './button';
+import { Button } from './button';
+import { ButtonVariants } from './button.constants';
 
 const meta: Meta<typeof Button> = {
   /* 👇 The title prop is optional.

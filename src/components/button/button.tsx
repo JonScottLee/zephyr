@@ -1,23 +1,13 @@
 import { FC } from 'react';
 import cx from 'classnames';
-
-export enum ButtonVariants {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-  TERTIARY = 'tertiary',
-}
-
-export enum ButtonSizes {
-  SMALL = 'small',
-  MEDIUM = 'medium',
-  LARGE = 'large',
-}
+import { ButtonVariants, ButtonSizes } from './button.constants';
 
 type ButtonProps = {
   active?: boolean;
   additionalClasses?: string;
-  size: ButtonSizes;
   disabled?: boolean;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  size: ButtonSizes;
   variant?: ButtonVariants;
 };
 
@@ -27,6 +17,7 @@ export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   active = false,
   additionalClasses = '',
   children,
+  onClick,
   disabled = false,
   size = ButtonSizes.LARGE,
   variant = ButtonVariants.PRIMARY,
@@ -46,8 +37,14 @@ export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
     additionalClasses,
   );
 
+  const onButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (onClick) {
+      onClick(event);
+    }
+  };
+
   return (
-    <button disabled={disabled} className={classes}>
+    <button onClick={onButtonClick} disabled={disabled} className={classes}>
       {children}
     </button>
   );
