@@ -17,14 +17,24 @@ export const Overview = () => <TextField id="foo" label="Label" />;
 
 export const States = () => (
   <ColWrapper style={{ gap: '2rem' }}>
-    <TextField label="Disabled" disabled id="disabled" />
+    <TextField
+      label="Disabled"
+      disabled
+      id="disabled"
+      helperText="Enter first name"
+    />
 
     <TextField
       label="With Helper Text"
       id="with-helper"
-      helperText="Helper Text"
+      helperText="Enter first name"
     />
 
-    <TextField label="Invalid" invalid id="invalid" />
+    <TextField
+      label="Invalid"
+      invalid
+      id="invalid"
+      helperText='First name cannot be blank'
+    />
   </ColWrapper>
 );

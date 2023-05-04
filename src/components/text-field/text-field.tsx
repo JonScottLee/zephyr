@@ -30,14 +30,24 @@ export const TextField: FC<TextFieldProps> = ({
   onChange,
   type = 'text',
 }) => {
+  const colors = {
+    disabled: 'gray-300',
+    invalid: 'red-500',
+  };
+
   const inputClasses = cx(inputRootClasses, {
-    '!border-gray-300 bg-transparent': disabled,
-    '!border-red-500': invalid,
+    [`!border-${colors.disabled} bg-transparent`]: disabled,
+    [`!border-${colors.invalid}`]: invalid,
   });
 
   const labelClasses = cx(labelRootClasses, {
-    '!text-gray-300': disabled,
-    '!text-red-500': invalid,
+    [`!text-${colors.disabled}`]: disabled,
+    [`!text-${colors.invalid}`]: invalid,
+  });
+
+  const helperTextClasses = cx({
+    [`!text-${colors.disabled}`]: disabled,
+    [`!text-${colors.invalid}`]: invalid,
   });
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -63,7 +73,9 @@ export const TextField: FC<TextFieldProps> = ({
         </label>
       )}
 
-      {helperText && <p className="text-sm my-2 text-gray-500">{helperText}</p>}
+      {helperText && (
+        <p className={`text-sm my-2 ${helperTextClasses}`}>{helperText}</p>
+      )}
     </div>
   );
 };
