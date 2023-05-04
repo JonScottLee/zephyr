@@ -31,7 +31,7 @@ export const TextField: FC<TextFieldProps> = ({
   type = 'text',
 }) => {
   const inputClasses = cx(inputRootClasses, {
-    '!border-gray-300': disabled,
+    '!border-gray-300 bg-transparent': disabled,
     '!border-red-500': invalid,
   });
 
