@@ -1,13 +1,7 @@
 import { FC } from 'react';
 import cx from 'classnames';
 
-enum TextFieldTypes {
-  text = 'text',
-  password = 'password',
-  email = 'email',
-  number = 'number',
-  tel = 'tel',
-}
+type TextFieldTypes = 'text' | 'password' | 'email' | 'number' | 'tel';
 
 export type TextFieldProps = {
   id: string;
@@ -19,7 +13,7 @@ export type TextFieldProps = {
 
 const rootClasses = 'border border-gray-300 rounded-md p-2';
 
-export const TextField: FC<TextFieldProps> = ({ id, label, type = TextFieldTypes.text, placeholder, onChange }) => {
+export const TextField: FC<TextFieldProps> = ({ id, label, type = 'text', placeholder, onChange }) => {
   const classes = cx(rootClasses);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {

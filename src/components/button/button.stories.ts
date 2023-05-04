@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './button';
-import { ButtonVariants } from './button.constants';
 
 const meta: Meta<typeof Button> = {
   /* 👇 The title prop is optional.
@@ -23,21 +22,21 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     children: 'Secondary Button',
-    variant: ButtonVariants.SECONDARY,
+    variant: 'secondary',
   },
 };
 
 export const Tertiary: Story = {
   args: {
     children: 'Tertiary Button',
-    variant: ButtonVariants.TERTIARY,
+    variant: 'tertiary',
   },
 };
 
 export const Disabled: Story = {
   args: {
     children: 'Disabled Button',
-    variant: ButtonVariants.PRIMARY,
+    variant: 'primary',
     disabled: true,
   },
 };
