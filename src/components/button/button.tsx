@@ -14,7 +14,7 @@ type ButtonProps = {
 };
 
 const rootClasses =
-  'button py-3 px-4 tracking-tight uppercase transition ease-in-out';
+  'button py-3 px-4 tracking-tight uppercase transition ease-in-out active:scale-90';
 
 export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   active = false,
@@ -35,7 +35,7 @@ export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
       'text-md': size === 'medium',
       'text-base': size === 'large',
       'opacity-50 pointer-events-none': disabled,
-      'button--active': active,
+      'scale-90': active,
     },
     additionalClasses,
   );

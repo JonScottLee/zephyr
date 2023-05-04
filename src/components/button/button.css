@@ -5,10 +5,15 @@
     @apply rounded;
   }
 
+  /* This is an example of an escape hatch of sorts.
+  A consumer could define their own @layer rules in their app,
+  and override the behavior of these classes. For example, they
+  could change the active behavior to something other than scale.
+  
   .button--active,
   .button:active {
     @apply scale-90;
-  }
+  } */
 
   .button--primary {
     @apply bg-primary-700;
