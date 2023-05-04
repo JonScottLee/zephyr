@@ -8,6 +8,7 @@ export type TextFieldProps = {
   disabled?: boolean;
   focus?: boolean;
   id: string;
+  invalid?: boolean;
   label?: string;
   type?: TextFieldTypes;
   placeholder?: string;
@@ -16,13 +17,15 @@ export type TextFieldProps = {
   size?: TextFieldSizes;
 };
 
-const rootClasses = 'border border-gray-300 rounded-md p-2';
+const rootClasses =
+  'border-2 border-gray-300 rounded-md p-2 focus:placeholder-black';
 
 export const TextField: FC<TextFieldProps> = ({
   disabled,
   focus = false,
   helperText,
   id,
+  invalid = false,
   label,
   onChange,
   placeholder,
@@ -35,7 +38,8 @@ export const TextField: FC<TextFieldProps> = ({
     'text-base': size === 'lg',
     'pointer-events-none bg-gray-100 border-none placeholder-gray-400':
       disabled,
-    'border-2 border-black': focus,
+    'border-black placeholder-black': focus,
+    'border-red-500 placeholder-red-500': invalid,
   });
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,6 +63,7 @@ export const TextField: FC<TextFieldProps> = ({
         type={type}
         placeholder={placeholder}
       />
+
       {helperText && <p className="text-sm text-gray-500">{helperText}</p>}
     </div>
   );

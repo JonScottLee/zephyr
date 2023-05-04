@@ -38,5 +38,7 @@ export const States = () => (
     <TextField id="with-label" placeholder='With Label' label="Label Text" />
 
     <TextField focus id="focus" placeholder='Focused' />
+
+    <TextField invalid id="invalid" placeholder='Invalid' />
   </ColWrapper>
 );
