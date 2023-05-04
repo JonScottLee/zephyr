@@ -6,7 +6,6 @@ type TextFieldTypes = 'text' | 'password' | 'email' | 'number' | 'tel';
 
 export type TextFieldProps = {
   disabled?: boolean;
-  focus?: boolean;
   id: string;
   invalid?: boolean;
   label: string;
@@ -16,13 +15,14 @@ export type TextFieldProps = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const inputRootClasses = '';
+const inputRootClasses =
+  'transition-all peer p-y-2 outline-none border-x-0 border-y-0 border-b-2 focus:border-b-2 border border-2 border-gray-500 focus:border-primary-500';
 
-const labelRootClasses = '';
+const labelRootClasses =
+  'peer-placeholder-shown:text-gray-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 -translate-y-6 scale-75 text-primary-500 peer-focus:scale-75 peer-focus:-translate-y-6  peer-focus:text-primary-500 transition-all absolute -left-0 -top-1 origin-left';
 
 export const TextField: FC<TextFieldProps> = ({
   disabled,
-  focus = false,
   helperText,
   id,
   invalid = false,
@@ -31,15 +31,13 @@ export const TextField: FC<TextFieldProps> = ({
   type = 'text',
 }) => {
   const inputClasses = cx(inputRootClasses, {
-    classes: disabled,
-    go: focus,
-    here: invalid,
+    '!border-gray-300': disabled,
+    '!border-red-500': invalid,
   });
 
   const labelClasses = cx(labelRootClasses, {
-    classes: disabled,
-    go: focus,
-    here: invalid,
+    '!text-gray-300': disabled,
+    '!text-red-500': invalid,
   });
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,7 +54,7 @@ export const TextField: FC<TextFieldProps> = ({
         onChange={onChangeHandler}
         id={id}
         type={type}
-        placeholder={' '}
+        placeholder={' '} // this space is deliberate
       />
 
       {label && (

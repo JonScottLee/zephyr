@@ -16,7 +16,7 @@ export default meta;
 export const Overview = () => <TextField id="foo" label="Label" />;
 
 export const States = () => (
-  <ColWrapper>
+  <ColWrapper style={{ gap: '2rem' }}>
     <TextField label="Disabled" disabled id="disabled" />
 
     <TextField
@@ -25,6 +25,6 @@ export const States = () => (
       helperText="Helper Text"
     />
 
-    <TextField label="invalid" invalid id="invalid" />
+    <TextField label="Invalid" invalid id="invalid" />
   </ColWrapper>
 );
