@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TextField } from './text-field';
+import { TextField, TextFieldProps } from './text-field';
 
 const meta: Meta<typeof TextField> = {
   /* 👇 The title prop is optional.
@@ -14,5 +14,8 @@ export default meta;
 type Story = StoryObj<typeof TextField>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    label: 'Label',
+    placeholder: 'Placeholder',
+  } as TextFieldProps,
 };
