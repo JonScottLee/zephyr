@@ -1,10 +1,12 @@
 import { FC } from 'react';
 import cx from 'classnames';
 
-type TextFieldSizes = 'small' | 'medium' | 'large';
+type TextFieldSizes = 'sm' | 'md' | 'lg';
 type TextFieldTypes = 'text' | 'password' | 'email' | 'number' | 'tel';
 
 export type TextFieldProps = {
+  disabled?: boolean;
+  focus?: boolean;
   id: string;
   label?: string;
   type?: TextFieldTypes;
@@ -17,6 +19,8 @@ export type TextFieldProps = {
 const rootClasses = 'border border-gray-300 rounded-md p-2';
 
 export const TextField: FC<TextFieldProps> = ({
+  disabled,
+  focus = false,
   helperText,
   id,
   label,
@@ -26,9 +30,12 @@ export const TextField: FC<TextFieldProps> = ({
   size = 'large',
 }) => {
   const classes = cx(rootClasses, {
-    'text-sm': size === 'small',
-    'text-md': size === 'medium',
-    'text-base': size === 'large',
+    'text-sm': size === 'sm',
+    'text-md': size === 'md',
+    'text-base': size === 'lg',
+    'pointer-events-none bg-gray-100 border-none placeholder-gray-400':
+      disabled,
+    'border-2 border-black': focus,
   });
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,9 +46,14 @@ export const TextField: FC<TextFieldProps> = ({
 
   return (
     <div>
-      {label && <label htmlFor={id}>{label}</label>}
+      {label && (
+        <label className="block" htmlFor={id}>
+          {label}
+        </label>
+      )}
       <input
         className={classes}
+        disabled={disabled}
         onChange={onChangeHandler}
         id={id}
         type={type}
