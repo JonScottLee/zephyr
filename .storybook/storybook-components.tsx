@@ -3,7 +3,14 @@ import React, { FC } from 'react';
 export const RowWrapper: FC<
   React.PropsWithChildren<{ style?: React.CSSProperties }>
 > = ({ children, style }) => (
-  <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}>
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'row',
+      gap: '1rem',
+      alignItems: 'center',
+    }}
+  >
     {children}
   </div>
 );
