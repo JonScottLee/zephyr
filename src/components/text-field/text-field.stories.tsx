@@ -13,32 +13,18 @@ const meta: Meta<typeof TextField> = {
 
 export default meta;
 
-export const Overview = () => (
-  <TextField id="foo" label="Label" placeholder="Enter label" />
-);
-
-export const Sizes = () => (
-  <ColWrapper>
-    <TextField id="small" size="sm" placeholder='Small' />
-    <TextField id="medium" size="md" placeholder='Medium' />
-    <TextField id="large" size="lg" placeholder='Large' />
-  </ColWrapper>
-);
+export const Overview = () => <TextField id="foo" label="Label" />;
 
 export const States = () => (
   <ColWrapper>
-    <TextField disabled id="small" placeholder='Disabled' />
+    <TextField label="Disabled" disabled id="disabled" />
 
     <TextField
+      label="With Helper Text"
       id="with-helper"
-      placeholder='With Helper Text'
       helperText="Helper Text"
     />
 
-    <TextField id="with-label" placeholder='With Label' label="Label Text" />
-
-    <TextField focus id="focus" placeholder='Focused' />
-
-    <TextField invalid id="invalid" placeholder='Invalid' />
+    <TextField label="invalid" invalid id="invalid" />
   </ColWrapper>
 );

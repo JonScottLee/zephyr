@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import cx from 'classnames';
 
-type TextFieldSizes = 'sm' | 'md' | 'lg';
+type TextFieldSizes = 'sm' | 'lg';
 type TextFieldTypes = 'text' | 'password' | 'email' | 'number' | 'tel';
 
 export type TextFieldProps = {
@@ -9,16 +9,16 @@ export type TextFieldProps = {
   focus?: boolean;
   id: string;
   invalid?: boolean;
-  label?: string;
+  label: string;
   type?: TextFieldTypes;
   placeholder?: string;
   helperText?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  size?: TextFieldSizes;
 };
 
-const rootClasses =
-  'border-2 border-gray-300 rounded-md p-2 focus:placeholder-black';
+const inputRootClasses = '';
+
+const labelRootClasses = '';
 
 export const TextField: FC<TextFieldProps> = ({
   disabled,
@@ -28,18 +28,18 @@ export const TextField: FC<TextFieldProps> = ({
   invalid = false,
   label,
   onChange,
-  placeholder,
   type = 'text',
-  size = 'large',
 }) => {
-  const classes = cx(rootClasses, {
-    'text-sm': size === 'sm',
-    'text-md': size === 'md',
-    'text-base': size === 'lg',
-    'pointer-events-none bg-gray-100 border-none placeholder-gray-400':
-      disabled,
-    'border-black placeholder-black': focus,
-    'border-red-500 placeholder-red-500': invalid,
+  const inputClasses = cx(inputRootClasses, {
+    classes: disabled,
+    go: focus,
+    here: invalid,
+  });
+
+  const labelClasses = cx(labelRootClasses, {
+    classes: disabled,
+    go: focus,
+    here: invalid,
   });
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,22 +49,23 @@ export const TextField: FC<TextFieldProps> = ({
   };
 
   return (
-    <div>
-      {label && (
-        <label className="block" htmlFor={id}>
-          {label}
-        </label>
-      )}
+    <div className="relative z-0">
       <input
-        className={classes}
+        className={inputClasses}
         disabled={disabled}
         onChange={onChangeHandler}
         id={id}
         type={type}
-        placeholder={placeholder}
+        placeholder={' '}
       />
 
-      {helperText && <p className="text-sm text-gray-500">{helperText}</p>}
+      {label && (
+        <label className={labelClasses} htmlFor={id}>
+          {label}
+        </label>
+      )}
+
+      {helperText && <p className="text-sm my-2 text-gray-500">{helperText}</p>}
     </div>
   );
 };
