@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import cx from 'classnames';
-import { ButtonVariants, ButtonSizes } from './button.constants';
+
+type ButtonVariants = 'primary' | 'secondary' | 'tertiary';
+type ButtonSizes = 'small' | 'medium' | 'large';
 
 type ButtonProps = {
   active?: boolean;
@@ -11,7 +13,8 @@ type ButtonProps = {
   variant?: ButtonVariants;
 };
 
-const rootClasses = 'button py-3 px-4 tracking-tight uppercase transition ease-in-out';
+const rootClasses =
+  'button py-3 px-4 tracking-tight uppercase transition ease-in-out';
 
 export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   active = false,

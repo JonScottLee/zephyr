@@ -1,28 +1,35 @@
 import { FC } from 'react';
 import cx from 'classnames';
 
+type TextFieldSizes = 'small' | 'medium' | 'large';
 type TextFieldTypes = 'text' | 'password' | 'email' | 'number' | 'tel';
 
 export type TextFieldProps = {
   id: string;
-  label: string;
-  type: TextFieldTypes;
+  label?: string;
+  type?: TextFieldTypes;
   placeholder?: string;
-  description?: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  helperText?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  size?: TextFieldSizes;
 };
 
 const rootClasses = 'border border-gray-300 rounded-md p-2';
 
 export const TextField: FC<TextFieldProps> = ({
+  helperText,
   id,
   label,
-  type = 'text',
-  placeholder,
   onChange,
-  description,
+  placeholder,
+  type = 'text',
+  size = 'large',
 }) => {
-  const classes = cx(rootClasses);
+  const classes = cx(rootClasses, {
+    'text-sm': size === 'small',
+    'text-md': size === 'medium',
+    'text-base': size === 'large',
+  });
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
@@ -31,8 +38,8 @@ export const TextField: FC<TextFieldProps> = ({
   };
 
   return (
-    <div className={classes}>
-      <label htmlFor={id}>{label}</label>
+    <div>
+      {label && <label htmlFor={id}>{label}</label>}
       <input
         className={classes}
         onChange={onChangeHandler}
@@ -40,7 +47,7 @@ export const TextField: FC<TextFieldProps> = ({
         type={type}
         placeholder={placeholder}
       />
-      <p className="text-sm text-gray-500">{description}</p>
+      {helperText && <p className="text-sm text-gray-500">{helperText}</p>}
     </div>
   );
 };
