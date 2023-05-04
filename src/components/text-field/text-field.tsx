@@ -8,12 +8,20 @@ export type TextFieldProps = {
   label: string;
   type: TextFieldTypes;
   placeholder?: string;
+  description?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const rootClasses = 'border border-gray-300 rounded-md p-2';
 
-export const TextField: FC<TextFieldProps> = ({ id, label, type = 'text', placeholder, onChange }) => {
+export const TextField: FC<TextFieldProps> = ({
+  id,
+  label,
+  type = 'text',
+  placeholder,
+  onChange,
+  description,
+}) => {
   const classes = cx(rootClasses);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +33,14 @@ export const TextField: FC<TextFieldProps> = ({ id, label, type = 'text', placeh
   return (
     <div className={classes}>
       <label htmlFor={id}>{label}</label>
-      <input className={classes} onChange={onChangeHandler} id={id} type={type} placeholder={placeholder} />
+      <input
+        className={classes}
+        onChange={onChangeHandler}
+        id={id}
+        type={type}
+        placeholder={placeholder}
+      />
+      <p className="text-sm text-gray-500">{description}</p>
     </div>
   );
 };

@@ -1,0 +1,3 @@
+{
+  "./src/**/*.{ts,js}": ["rome format --write", "rome check --apply"]
+}

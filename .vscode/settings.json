@@ -1,0 +1,5 @@
+{
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "folderTemplates.globalTemplateDirectoryPath": "",
+  "folderTemplates.templateFolderPath": ".vscode/.fttemplates"
+}
