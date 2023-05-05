@@ -11,8 +11,5 @@ const meta: Meta<typeof [FTName | pascalcase]> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof [FTName | pascalcase]>;
 
-export const Default: Story = {
-  args: {},
-};
+export const Overview = () => <[FTName | pascalcase] />;
