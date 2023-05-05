@@ -43,7 +43,7 @@ export const Select: FC<SelectProps> = ({ items, label }) => {
                 {items.map((item, i) => (
                   <Listbox.Option
                     key={`item-${i}`}
-                    className={({ active }) =>
+                    className={({ active }: { active: boolean }) =>
                       cx(
                         active ? 'bg-primary-600 text-white' : 'text-gray-900',
                         'relative cursor-default select-none py-2 pl-3 pr-9',
