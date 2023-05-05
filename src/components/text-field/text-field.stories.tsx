@@ -7,7 +7,7 @@ const meta: Meta<typeof TextField> = {
    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: 'Foo/Text Field',
+  title: 'Inputs/Text Field',
   component: TextField,
 };
 
