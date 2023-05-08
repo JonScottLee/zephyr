@@ -11,13 +11,14 @@ type ToutProps = {
 export const Tout: FC<ToutProps> = ({
   backgroundImage,
   content,
-  contentPos = 'left',
+  contentPos = 'center',
 }) => {
-  const rootClasses = cx('p-8 h-96 items-center flex', {
+  const rootClasses = cx('p-2 lg:p-8 h-96 items-center flex', {
     'bg-cover': backgroundImage,
   });
 
   const contentClasses = cx('lg:max-w-[50%]', {
+    'self-center text-center mx-auto': contentPos === 'center',
     'self-start text-left': contentPos === 'left',
     'self-end text-right ml-auto': contentPos === 'right',
   });

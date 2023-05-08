@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
 import { Tout } from './tout';
-import { H2 } from '../helpers/container/typography/typography';
+import { H2, P } from '../helpers/container/typography/typography';
 import { FC } from 'react';
 import { ColWrapper } from '../../../.storybook/storybook-components';
 
@@ -35,6 +35,7 @@ export const Positions: FC = () => (
   <ColWrapper>
     <Tout
       backgroundImage='/wind.jpg'
+      contentPos='left'
       content={
         <>
           <H2>Content On Left</H2>
