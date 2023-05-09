@@ -6,15 +6,18 @@ type ToutProps = {
   backgroundImage?: string;
   content: ReactNode;
   contentPos?: 'left' | 'right';
+  variant?: 'flat' | 'half-flat';
 };
 
 export const Tout: FC<ToutProps> = ({
   backgroundImage,
   content,
+  variant,
   contentPos = 'center',
 }) => {
   const rootClasses = cx('p-2 lg:p-8 h-96 items-center flex', {
     'bg-cover': backgroundImage,
+    'bg-primary text-white': variant === 'flat',
   });
 
   const contentClasses = cx('lg:max-w-[50%]', {
@@ -23,7 +26,7 @@ export const Tout: FC<ToutProps> = ({
     'self-end text-right ml-auto': contentPos === 'right',
   });
 
-  const backgroundStyle = backgroundImage
+  const backgroundStyle: React.CSSProperties = backgroundImage
     ? { backgroundImage: `url(${backgroundImage})` }
     : {};
 

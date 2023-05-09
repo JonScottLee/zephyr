@@ -31,6 +31,41 @@ export const Overview: FC = () => (
   />
 );
 
+export const Variants: FC = () => (
+  <ColWrapper>
+    <Tout
+      contentPos='left'
+      variant='flat'
+      content={
+        <>
+          <H2>Flat Tout</H2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+            accumsan mauris a interdum euismod. Sed auctor turpis lacinia purus
+            vehicula lobortis.
+          </p>
+        </>
+      }
+    />
+
+    <Tout
+      backgroundImage='/wind.jpg'
+      contentPos='left'
+      variant='half-flat'
+      content={
+        <>
+          <H2>Half-Flat Tout</H2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+            accumsan mauris a interdum euismod. Sed auctor turpis lacinia purus
+            vehicula lobortis.
+          </p>
+        </>
+      }
+    />
+  </ColWrapper>
+);
+
 export const Positions: FC = () => (
   <ColWrapper>
     <Tout
