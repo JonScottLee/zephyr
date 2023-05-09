@@ -3,21 +3,28 @@ import cx from 'classnames';
 import { Container } from '../helpers/container/container';
 
 type ToutProps = {
+  backgroundColor?: string;
   backgroundImage?: string;
+  textColor?: 'light' | 'dark';
   content: ReactNode;
   contentPos?: 'left' | 'right';
-  variant?: 'flat' | 'half-flat';
+  variant?: 'flat';
+  clip?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 };
 
 export const Tout: FC<ToutProps> = ({
+  backgroundColor,
   backgroundImage,
+  textColor = 'dark',
   content,
-  variant,
   contentPos = 'center',
+  clip,
 }) => {
-  const rootClasses = cx('p-2 lg:p-8 h-96 items-center flex', {
-    'bg-cover': backgroundImage,
-    'bg-primary text-white': variant === 'flat',
+  const rootClasses = cx('relative p-2 lg:p-8 h-96 items-center flex', {
+    'text-white': textColor === 'light',
+    [`bg-[${backgroundColor}]`]: backgroundColor,
+    'text-black': textColor === 'dark',
+    'clip-up': clip === 'bottom-right',
   });
 
   const contentClasses = cx('lg:max-w-[50%]', {
@@ -26,12 +33,18 @@ export const Tout: FC<ToutProps> = ({
     'self-end text-right ml-auto': contentPos === 'right',
   });
 
-  const backgroundStyle: React.CSSProperties = backgroundImage
-    ? { backgroundImage: `url(${backgroundImage})` }
-    : {};
+  console.log(backgroundColor);
+
+  // const additionalStyles: React.CSSProperties = {
+  //   backgroundColor: backgroundColor ? backgroundColor : undefined,
+  //   backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+  //   backgroundSize: 'cover',
+  // };
+
+  const additionalStyles = {};
 
   return (
-    <div style={backgroundStyle} className={rootClasses}>
+    <div style={additionalStyles} className={rootClasses}>
       <Container className="flex">
         <div className={contentClasses}>{content}</div>
       </Container>

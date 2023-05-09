@@ -43,6 +43,6 @@ const preview: Preview = {
   },
 };
 
-import '../src/tailwind.css';
+import '!style-loader!css-loader!postcss-loader!../src/tailwind.css';
 
 export default preview;

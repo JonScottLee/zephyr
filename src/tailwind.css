@@ -1,4 +1,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .clip-up {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% calc(100% - 8vw),
+      0% 100%
+    );
+  }
+}
+
 @import './components/button/button.css';

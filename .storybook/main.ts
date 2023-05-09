@@ -7,6 +7,14 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
+        },
+      },
+    },
+    {
       name: '@storybook/addon-styling',
       options: {
         // Check out https://github.com/storybookjs/addon-styling/blob/main/docs/api.md

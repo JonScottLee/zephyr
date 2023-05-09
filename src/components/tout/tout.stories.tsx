@@ -35,30 +35,13 @@ export const Variants: FC = () => (
   <ColWrapper>
     <Tout
       contentPos='left'
-      variant='flat'
+      backgroundColor='#cc0001'
+      textColor='dark'
       content={
         <>
           <H2>Flat Tout</H2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-            accumsan mauris a interdum euismod. Sed auctor turpis lacinia purus
-            vehicula lobortis.
-          </p>
-        </>
-      }
-    />
-
-    <Tout
-      backgroundImage='/wind.jpg'
-      contentPos='left'
-      variant='half-flat'
-      content={
-        <>
-          <H2>Half-Flat Tout</H2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-            accumsan mauris a interdum euismod. Sed auctor turpis lacinia purus
-            vehicula lobortis.
+            You can assign a flat color as the background as well as an image
           </p>
         </>
       }
@@ -93,6 +76,39 @@ export const Positions: FC = () => (
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
             accumsan mauris a interdum euismod. Sed auctor turpis lacinia purus
             vehicula lobortis.
+          </p>
+        </>
+      }
+    />
+  </ColWrapper>
+);
+
+export const Clips: FC = () => (
+  <ColWrapper>
+    <Tout
+      clip='bottom-right'
+      backgroundImage='/wind.jpg'
+      contentPos='left'
+      content={
+        <>
+          <H2>Clip Content</H2>
+          <p>
+            If you want more dynamic-looking touts, you can clip the BG image
+          </p>
+        </>
+      }
+    />
+
+    <Tout
+      backgroundColor='#E6E6FA'
+      textColor='dark'
+      clip='bottom-right'
+      contentPos='left'
+      content={
+        <>
+          <H2>Clip Content</H2>
+          <p>
+            If you want more dynamic-looking touts, you can clip the BG image
           </p>
         </>
       }
