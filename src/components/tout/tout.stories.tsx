@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
 import { Tout } from './tout';
-import { H2, P } from '../helpers/container/typography/typography';
+import { H2, P } from '../helpers/typography';
 import { FC } from 'react';
 import { ColWrapper } from '../../../.storybook/storybook-components';
 
