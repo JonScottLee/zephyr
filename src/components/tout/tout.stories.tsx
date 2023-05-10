@@ -35,7 +35,6 @@ export const Variants: FC = () => (
   <ColWrapper>
     <Tout
       className="bg-[#E6E6FA]"
-      contentPos='left'
       textColor='dark'
       content={
         <>
