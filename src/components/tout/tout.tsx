@@ -3,6 +3,7 @@ import cx from 'classnames';
 import { Container } from '../helpers/container/container';
 
 type ToutProps = {
+  className?: string;
   backgroundColor?: string;
   backgroundImage?: string;
   textColor?: 'light' | 'dark';
@@ -13,19 +14,20 @@ type ToutProps = {
 };
 
 export const Tout: FC<ToutProps> = ({
-  backgroundColor,
-  backgroundImage,
+  className,
   textColor = 'dark',
   content,
   contentPos = 'center',
   clip,
 }) => {
-  const rootClasses = cx('relative p-2 lg:p-8 h-96 items-center flex', {
-    'text-white': textColor === 'light',
-    [`bg-[${backgroundColor}]`]: backgroundColor,
-    'text-black': textColor === 'dark',
-    'clip-up': clip === 'bottom-right',
-  });
+  const rootClasses = cx(
+    'bg-cover relative p-2 lg:p-8 h-96 items-center flex',
+    {
+      'text-white': textColor === 'light',
+      'text-black': textColor === 'dark',
+      'clip-up': clip === 'bottom-right',
+    },
+  );
 
   const contentClasses = cx('lg:max-w-[50%]', {
     'self-center text-center mx-auto': contentPos === 'center',
@@ -33,18 +35,8 @@ export const Tout: FC<ToutProps> = ({
     'self-end text-right ml-auto': contentPos === 'right',
   });
 
-  console.log(backgroundColor);
-
-  // const additionalStyles: React.CSSProperties = {
-  //   backgroundColor: backgroundColor ? backgroundColor : undefined,
-  //   backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
-  //   backgroundSize: 'cover',
-  // };
-
-  const additionalStyles = {};
-
   return (
-    <div style={additionalStyles} className={rootClasses}>
+    <div className={`${className} ${rootClasses}`}>
       <Container className="flex">
         <div className={contentClasses}>{content}</div>
       </Container>

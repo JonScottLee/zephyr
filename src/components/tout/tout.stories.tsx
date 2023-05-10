@@ -17,7 +17,7 @@ export default meta;
 
 export const Overview: FC = () => (
   <Tout
-    backgroundImage='/wind.jpg'
+    className="bg-[url('/wind.jpg')]"
     content={
       <>
         <H2>Tout</H2>
@@ -34,8 +34,8 @@ export const Overview: FC = () => (
 export const Variants: FC = () => (
   <ColWrapper>
     <Tout
+      className="bg-[#E6E6FA]"
       contentPos='left'
-      backgroundColor='#cc0001'
       textColor='dark'
       content={
         <>
@@ -52,7 +52,7 @@ export const Variants: FC = () => (
 export const Positions: FC = () => (
   <ColWrapper>
     <Tout
-      backgroundImage='/wind.jpg'
+      className="bg-[url('/wind.jpg')]"
       contentPos='left'
       content={
         <>
@@ -67,7 +67,7 @@ export const Positions: FC = () => (
     />
 
     <Tout
-      backgroundImage='/wind.jpg'
+      className="bg-[url('/wind.jpg')]"
       contentPos='right'
       content={
         <>
@@ -87,7 +87,7 @@ export const Clips: FC = () => (
   <ColWrapper>
     <Tout
       clip='bottom-right'
-      backgroundImage='/wind.jpg'
+      className="bg-[url('/wind.jpg')]"
       contentPos='left'
       content={
         <>
@@ -100,7 +100,7 @@ export const Clips: FC = () => (
     />
 
     <Tout
-      backgroundColor='#E6E6FA'
+      className="bg-[#E6E6FA]"
       textColor='dark'
       clip='bottom-right'
       contentPos='left'
