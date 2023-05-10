@@ -18,6 +18,7 @@ export const Kinds: FC = () => (
   <RowWrapper>
     <Button>Primary</Button>
     <Button variant="secondary">Secondary</Button>
+    <Button variant="secondary-inverse">Secondary Inverse</Button>
     <Button variant="tertiary">Tertiary</Button>
   </RowWrapper>
 );

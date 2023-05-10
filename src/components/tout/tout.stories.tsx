@@ -1,5 +1,6 @@
 import type { Meta } from '@storybook/react';
 import { Tout } from './tout';
+import { Button } from '../button/button';
 import { H2, P } from '../helpers/typography';
 import { FC } from 'react';
 import { ColWrapper } from '../../../.storybook/storybook-components';
@@ -34,13 +35,29 @@ export const Overview: FC = () => (
 export const Variants: FC = () => (
   <ColWrapper>
     <Tout
-      className="bg-[#E6E6FA]"
-      textColor='dark'
+      className="bg-slate-500"
+      textColor='light'
       content={
         <>
           <H2>Flat Tout</H2>
           <p>
             You can assign a flat color as the background as well as an image
+          </p>
+        </>
+      }
+    />
+
+    <Tout
+      className="bg-slate-500"
+      contentPos='left'
+      textColor='light'
+      action={<Button variant='secondary-inverse'>Learn More</Button>}
+      content={
+        <>
+          <H2>With Action Button</H2>
+          <p>
+            You can pass arbitrary content to the action prop and the tout will
+            position it beneath the text content
           </p>
         </>
       }

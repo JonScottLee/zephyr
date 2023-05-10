@@ -3,6 +3,7 @@ import cx from 'classnames';
 import { Container } from '../helpers/container/container';
 
 type ToutProps = {
+  action?: ReactNode;
   className?: string;
   backgroundColor?: string;
   backgroundImage?: string;
@@ -14,6 +15,7 @@ type ToutProps = {
 };
 
 export const Tout: FC<ToutProps> = ({
+  action,
   className,
   textColor = 'dark',
   content,
@@ -38,7 +40,10 @@ export const Tout: FC<ToutProps> = ({
   return (
     <div className={`${className} ${rootClasses}`}>
       <Container className="flex">
-        <div className={contentClasses}>{content}</div>
+        <div className={contentClasses}>
+          {content}
+          {action && <div className="mt-6">{action}</div>}
+        </div>
       </Container>
     </div>
   );

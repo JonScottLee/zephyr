@@ -25,13 +25,22 @@
     background: transparent;
     @apply border-2;
     @apply border-primary-900;
+    @apply text-primary;
     @apply hover:bg-primary-900;
     @apply hover:text-white;
+  }
+
+  .button--secondary--inverse {
+    background: transparent;
+    @apply border-2;
+    @apply border-white;
+    @apply text-white;
+    @apply hover:bg-white;
+    @apply hover:text-primary;
   }
 
   .button--tertiary {
     @apply text-black;
     @apply hover:bg-primary-200;
   }
-
 }

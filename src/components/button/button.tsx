@@ -1,7 +1,13 @@
 import { FC } from 'react';
 import cx from 'classnames';
 
-type ButtonVariants = 'primary' | 'secondary' | 'tertiary';
+import './button.css';
+
+type ButtonVariants =
+  | 'primary'
+  | 'secondary'
+  | 'secondary-inverse'
+  | 'tertiary';
 type ButtonSizes = 'small' | 'medium' | 'large';
 
 type ButtonProps = {
@@ -31,6 +37,7 @@ export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
       'button--primary': variant === 'primary',
       'button--secondary': variant === 'secondary',
       'button--tertiary': variant === 'tertiary',
+      'button--secondary--inverse': variant === 'secondary-inverse',
       'text-sm': size === 'small',
       'text-md': size === 'medium',
       'text-base': size === 'large',
